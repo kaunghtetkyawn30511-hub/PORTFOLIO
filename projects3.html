@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Poster Design</title>
+
+  <style>
+    body {
+      font-family: Arial;
+      background: #0f172a;
+      color: white;
+      text-align: center;
+      padding: 40px;
+    }
+
+    /* Gallery */
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .gallery img {
+      width: 250px;
+      margin: 10px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    /* Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.9);
+      display: none;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal img {
+      max-width: 80%;
+      max-height: 80%;
+      border-radius: 10px;
+      animation: fadeIn 0.4s;
+    }
+
+    /* Animation */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    a {
+      color: cyan;
+      text-decoration: none;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>Poster Design</h1>
+  <p>Creative marketing poster</p>
+
+  <!-- Gallery -->
+  <div class="gallery">
+    <img src="smmm1.jpg" onclick="openModal(this)">
+    <img src="smmm2.jpg" onclick="openModal(this)">
+    <img src="smmm3.jpg" onclick="openModal(this)">
+    <img src="smmm4.jpg" onclick="openModal(this)">
+    <img src="smmm5.jpg" onclick="openModal(this)">
+    <img src="smmm6.jpg" onclick="openModal(this)">
+    <img src="smmm7.jpg" onclick="openModal(this)">
+    <img src="smmm8.jpg" onclick="openModal(this)">
+    <img src="smmm9.jpg" onclick="openModal(this)">
+    <img src="smmm10.jpg" onclick="openModal(this)">
+    <img src="smmm11.jpg" onclick="openModal(this)">
+    <img src="smmm12.jpg" onclick="openModal(this)">
+    <img src="smmm13.jpg" onclick="openModal(this)">
+    <img src="smmm14.jpg" onclick="openModal(this)">
+    <img src="smmm15.jpg" onclick="openModal(this)">
+    <img src="smmm16.jpg" onclick="openModal(this)">
+  </div>
+
+  <br><br>
+  <a href="projects.html"> Back to Projects</a>
+
+  <!-- Modal -->
+  <div id="myModal" class="modal" onclick="closeModal()">
+    <img id="modalImg">
+  </div>
+
+  <!-- JS -->
+  <script>
+    function openModal(img) {
+      var modal = document.getElementById("myModal");
+      var modalImg = document.getElementById("modalImg");
+
+      modal.style.display = "flex";
+      modalImg.src = img.src;
+    }
+
+    function closeModal() {
+      document.getElementById("myModal").style.display = "none";
+    }
+
+    // ESC key close
+    document.addEventListener("keydown", function(e) {
+      if (e.key === "Escape") {
+        document.getElementById("myModal").style.display = "none";
+      }
+    });
+  </script>
+
+</body>
+</html>
